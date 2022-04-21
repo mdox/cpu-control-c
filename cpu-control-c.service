@@ -1,0 +1,12 @@
+[Unit]
+Description=CPU Control C
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/cpu-control-c
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=default.target

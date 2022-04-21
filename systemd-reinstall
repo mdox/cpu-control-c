@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+./systemd-uninstall
+./systemd-install

@@ -1,0 +1,9 @@
+#!/usr/bin/bash -e
+
+systemctl disable cpu-control-c
+systemctl stop cpu-control-c
+
+rm -f /usr/local/bin/cpu-control-c
+rm -f /etc/systemd/system/cpu-control-c.service
+
+systemctl daemon-reload
