@@ -93,14 +93,12 @@ const double get_temp()
 
 const char *get_governor()
 {
-  static char buffer[32];
-  static char *result = &buffer[16];
+  static char result[16];
   FILE *file;
   if (file = fopen("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor", "r"))
   {
-    memset(buffer, 0, 32);
-    fread(buffer, 1, 15, file);
-    sscanf(buffer, "%[a-z]", result);
+    memset(result, 0, 16);
+    fscanf(file, "%15[a-z]", result);
     fclose(file);
   }
   return result;
