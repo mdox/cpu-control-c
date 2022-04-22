@@ -19,7 +19,7 @@ const double set_freq(const double freq);
 
 int main(int argc, char *argv[])
 {
-  for (int opt; (opt = getopt(argc, argv, "ntc")) != -1;)
+  for (int opt; (opt = getopt(argc, argv, "n:t:c:")) != -1;)
   {
     switch (opt)
     {
