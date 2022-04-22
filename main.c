@@ -51,9 +51,9 @@ int main(int argc, char *argv[])
     const double temp = get_temp();
 
     if (temp >= TEMP_TOLERATE)
-      set_freq(fmaxf(min_freq, get_freq() - (max_freq - min_freq) * 0.1 * (temp - TEMP_TOLERATE) / (TEMP_CRITICAL - TEMP_TOLERATE)));
+      set_freq(fmax(min_freq, get_freq() - (max_freq - min_freq) * 0.1 * (temp - TEMP_TOLERATE) / (TEMP_CRITICAL - TEMP_TOLERATE)));
     else if (temp >= TEMP_NORMAL)
-      set_freq(fminf(max_freq, get_freq() + (max_freq - min_freq) * 0.1 * (temp - TEMP_NORMAL) / (TEMP_TOLERATE - TEMP_NORMAL)));
+      set_freq(fmin(max_freq, get_freq() + (max_freq - min_freq) * 0.1 * (temp - TEMP_NORMAL) / (TEMP_TOLERATE - TEMP_NORMAL)));
     else if (temp >= 0.0)
       set_freq(max_freq);
 
